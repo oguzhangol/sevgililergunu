@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgilim İçin 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <header>
+            <h1>💞 Sevgilim İçin 💞</h1>
+            <p>Bu sayfa, kalbimin en güzel köşesine ait...</p>
+        </header>
+
+        <section class="message">
+            <p>Seni tanıdığım gün hayatımın en özel günüydü. Her anımız benim için bir hazine. İyi ki varsın sevgilim! 💘</p>
+        </section>
+
+        <section class="gallery">
+            <div class="photo"><img src="https://via.placeholder.com/300x400" alt="Anılarımız 1"></div>
+            <div class="photo"><img src="https://via.placeholder.com/300x400" alt="Anılarımız 2"></div>
+            <div class="photo"><img src="https://via.placeholder.com/300x400" alt="Anılarımız 3"></div>
+        </section>
+
+        <section class="slideshow">
+            <div class="slides">
+                <img src="https://via.placeholder.com/800x500" class="slide" alt="Fotoğraf 1">
+                <img src="https://via.placeholder.com/800x500" class="slide" alt="Fotoğraf 2">
+                <img src="https://via.placeholder.com/800x500" class="slide" alt="Fotoğraf 3">
+            </div>
+        </section>
+
+        <footer>
+            <p>💖 Sonsuza kadar seninle... 💖</p>
+        </footer>
+    </div>
+
+    <audio autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let index = 0;
+
+        function showSlide() {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+            index = (index + 1) % slides.length;
+        }
+
+        setInterval(showSlide, 3000);
+        showSlide();
+    </script>
+</body>
+</html>
