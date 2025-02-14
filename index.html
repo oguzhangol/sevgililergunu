@@ -30,8 +30,31 @@
         }
 
         .floating-element.heart {
-            background: radial-gradient(circle, red 60%, pink 100%);
-            clip-path: path("M 10 30 C 10 20 20 10 30 30 C 40 10 50 20 30 50 Z");
+            width: 30px;
+            height: 30px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            animation: floatUp 10s linear infinite;
+        }
+
+        .floating-element.heart::before,
+        .floating-element.heart::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .floating-element.heart::after {
+            left: 15px;
         }
 
         @keyframes floatUp {
